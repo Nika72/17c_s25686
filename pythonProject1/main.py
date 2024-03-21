@@ -74,3 +74,38 @@ try:
     print("Task 9:", cubic_generator.generate_squares(-1, 10))
 except ValueError as e:
     print("Task 9:", e)
+
+    # Task 10: Abstract Elements
+    from abc import ABC, abstractmethod
+
+
+    class AbstractGenerator(ABC):
+        @abstractmethod
+        def generate_squares(self, start, end):
+            pass
+
+
+    class SquareGenerator(AbstractGenerator):
+        def generate_squares(self, start, end):
+            if end < start:
+                raise ValueError("End of the range must be greater than or equal to start")
+            if start < 0:
+                raise ValueError("Start of the range must be non-negative")
+            squares = [x ** 2 for x in range(start, end + 1)]
+            return [math.sqrt(square) for square in squares]
+
+
+    class CubicGenerator(SquareGenerator):
+        def generate_squares(self, start, end):
+            if end < start:
+                raise ValueError("End of the range must be greater than or equal to start")
+            return [x ** 3 if x >= 0 else x ** 2 for x in range(start, end + 1)]
+
+
+    generator = CubicGenerator()
+    try:
+        print("Task 10:", generator.generate_squares(-1, 10))
+    except ValueError as e:
+        print("Task 10:", e)
+
+

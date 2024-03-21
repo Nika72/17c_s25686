@@ -15,3 +15,14 @@ class SquareGenerator:
 
 generator = SquareGenerator()
 print("Task 3:", generator.generate_squares(1, 10))
+
+# Task 4: Libraries
+import math
+
+class SquareGenerator:
+    def generate_squares(self, start, end):
+        squares = [x ** 2 for x in range(start, end + 1)]
+        return [math.sqrt(square) for square in squares]
+
+generator = SquareGenerator()
+print("Task 4:", generator.generate_squares(1, 10))

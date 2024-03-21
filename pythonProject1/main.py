@@ -41,3 +41,11 @@ try:
     print("Task 5:", generator.generate_squares(1, 0))
 except ValueError as e:
     print("Task 5:", e)
+
+
+# Task 6: Modules
+import math
+
+
+generator = SquareGenerator()
+print("Task 6:", generator.generate_squares(1, 10))

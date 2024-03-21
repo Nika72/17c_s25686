@@ -26,3 +26,18 @@ class SquareGenerator:
 
 generator = SquareGenerator()
 print("Task 4:", generator.generate_squares(1, 10))
+
+
+# Task 5: Exceptions
+class SquareGenerator:
+    def generate_squares(self, start, end):
+        if end < start:
+            raise ValueError("End of the range must be greater than or equal to start")
+        squares = [x ** 2 for x in range(start, end + 1)]
+        return [math.sqrt(square) for square in squares]
+
+generator = SquareGenerator()
+try:
+    print("Task 5:", generator.generate_squares(1, 0))
+except ValueError as e:
+    print("Task 5:", e)

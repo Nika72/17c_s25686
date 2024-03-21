@@ -47,8 +47,13 @@ except ValueError as e:
 import math
 
 
-generator = SquareGenerator()
-print("Task 6:", generator.generate_squares(1, 10))
+# square_generator.py
+class SquareGenerator:
+    def generate_squares(self, start, end):
+        if end < start:
+            raise ValueError("End of the range must be greater than or equal to the start.")
+        return [i**2 for i in range(start, end + 1)]
+
 
 # Task 8: Inheritance
 class CubicGenerator(SquareGenerator):

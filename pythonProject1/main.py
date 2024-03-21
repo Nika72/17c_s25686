@@ -49,3 +49,13 @@ import math
 
 generator = SquareGenerator()
 print("Task 6:", generator.generate_squares(1, 10))
+
+# Task 8: Inheritance
+class CubicGenerator(SquareGenerator):
+    def generate_squares(self, start, end):
+        if end < start:
+            raise ValueError("End of the range must be greater than or equal to start")
+        return [x ** 3 for x in range(start, end + 1)]
+
+cubic_generator = CubicGenerator()
+print("Task 8:", cubic_generator.generate_squares(1, 10))
